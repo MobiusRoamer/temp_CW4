@@ -50,9 +50,9 @@ Entries with the same hash index are placed in the same bucket. The common appro
 Load factor measures the proportion of positions already filled with keys in the hashTable. Keeping a threshold below 1, one 
 may increase the hashTable size whenever the threshold is met. Increasing the table size is called rehashing. 
 
-## HashSet_HashMap
-HashSet: implements java set interface, duplicate values allowed but no duplicate keys allowed. No guarantee of retrieval by
+## Search Complexities
+**HashSet**: implements java set interface, duplicate values allowed but no duplicate keys allowed. No guarantee of retrieval by
  any particular order so search requires iterating through all elements leading to $O(n)$
 
-HashMap: implements java map interface, duplicates not allowed for both keys and values. Loops up items based on keys so 
+**HashMap**: implements java map interface, duplicates not allowed for both keys and values. Loops up items based on keys so 
 search complexity tightens to $O(1)$, direct retrieval. 
