@@ -1,6 +1,6 @@
 # Closure, Func_Interface
 
-**TL;DR**
+##TL;DR
 Functional interface is a structure, closure is a behaviour.
 
 A functional interface is an interface with exactly one abstract method.
