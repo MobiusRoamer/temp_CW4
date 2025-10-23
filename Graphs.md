@@ -65,6 +65,7 @@ $v2$ from $v1$. Then upon reaching a destination $vi$ we can backtrack the path 
 we return to the starting point. 
 ## BFS & DFS & Dijkstra
 Consider a graph with $V$ vertices and $E$ edges
+
 | **Algorithm** | **BFS** | **DFS** | **Dijkstra’s** |
 |-------------|--------------------------------|------------------------------|---------------------------|
 | **Goal** | Explore all vertices in one adjacency level distanced from the starting node before advancing to the next level | Explores as deep as possible along each branch before backtracking | Finds the minimum-cost path from a source to all other nodes |
@@ -75,6 +76,7 @@ Consider a graph with $V$ vertices and $E$ edges
 | **Space Complexity** | O(V) | O(V) | O(V + E) |
 | **The Invariant** | Enqueue -> Dequeue -> Process -> Enqueue Children; repeat | Push -> Pop -> Process -> Push Children; repeat | Add -> Poll (get min by distance from minHeap) -> update distance for children; Repeat (see note (2)) |
 | **Typical Use Cases** | Shortest path in unweighted graphs (returns the paths with least number of nodes), finding connected components | Detecting cycles, path existence | Shortest path in weighted networks |
+
 _(1) Why does Dijkstra's take O((V + E) log V) runtime? It performs $V$ extractions of the minimum element and $E$ updates, each taking $O(logV)$ time due to the structure of the
 minHeap. In a minHeap the extraction of the minimum element terminates when one reaches the leaf level. Thus the number of levels is n for $V/2^n = 1 \iff n = log_2 V$_. 
 
