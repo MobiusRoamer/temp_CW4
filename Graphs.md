@@ -63,6 +63,24 @@ This implementation merits the backtracking of paths.
 For example, one may record a key value pair as (v1, v2)=(to, from) meaning we went to
 $v2$ from $v1$. Then upon reaching a destination $vi$ we can backtrack the path by calling `vj=map.get(vi)`, then recursively calling `map.get(vj)` until 
 we return to the starting point. 
+
+
+### How to model directed graphs?
+Each vertex can be represented as
+```
+public class Vertex {
+    private int id;        // e.g., 0, 1, 2, ...
+    private String value;  // e.g., "A", "B", "C"
+}
+```
+and an edge with direction can be represented as
+```
+public class Edge {
+    private int source;  // vertex ID (from)
+    private int target;  // vertex ID (to)
+}
+```
+
 ## BFS & DFS & Dijkstra
 Consider a graph with $V$ vertices and $E$ edges
 
