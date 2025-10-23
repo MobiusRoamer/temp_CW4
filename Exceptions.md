@@ -17,3 +17,30 @@ Exceptions handling is a security layer that recognises runtime errors and still
 |     e.printStackTrace();                                                                                           |                                                                                                          |
 | }                                                                                                                  |                                                                                                          |
 | ```                                                                                                                | ```                                                                                                      |
+
+## (Checked Exception) Try with Resources
+In Java, a resource is any external system object that your program uses — like a file, socket, database connection, or input/output stream.
+These objects occupy limited system resources outside the java virtual machine (e.g., file descriptors, network ports).
+When we are done using them, we must release those system-level handles — that’s what “closing” means.
+
+Most I/O-related operations (file reading, database access, network communication) throw checked exceptions such as IOException or SQLException. It usually requires a three-block structure
+```
+BufferedReader br = null;
+try {
+    ...
+} catch (IOException e) {
+    ...
+} finally {
+    ...
+}
+
+```
+TEDIOUS. Try-with-resource solves this problem: 
+```
+try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) { // the resource!
+    ...
+} catch (IOException e) {
+    ...
+}
+```
+It ensures that resources are automatically closed and removes the need for an explicit finally block calling `close()`. 
