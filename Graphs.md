@@ -242,34 +242,3 @@ For graph traversals there are in general three steps.
 1. Initialization: usually involves (a) A list of visited nodes (b) a set of nodes to be visited (in deque or stack) (c) path traversed thus far
 2. Exploration of neighbours
 3. Process neighbour
-## DFS
-### General Traversal
-Maintains two dynamic records: (a) for each node, whether visited it or not (an array of boolean); 
-(b) an array of nodes to be visited, initially empty.
-
-PseudoCode
-```
-
-```
-### Finding Cycles
-
-## BFS
-PseudoCode
-```
-while q not empty
-    (v, State) = q.pop()
-    if v == goal
-        return true
-    for each edge e of v
-        u = other endpoint
-        if not constraint traversable(e, (u, v)) continue
-        nextState = State
-        if stateUpdate at v: nextState.add(stateUpdate)
-        if u not visited
-            mark u visited 
-            q.push(v, nextState)
-```
-## Dijkstra's 
-**(Dijkstra's)** Given a directed graph $G = (V, E)$, with NONNEGATIVE edge weights, the single-source shortest path problem
-can be solved using Dijkstra's algorithm in time $O(mlogn)$ where $|V| = n$ and $|E|=m$, if implemented using a heap data structure.
-(See "/src/Heap/HeapBasics.java" on heap structure)
