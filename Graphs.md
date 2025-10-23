@@ -78,7 +78,7 @@ Consider a graph with $V$ vertices and $E$ edges
 | **Typical Use Cases** | Shortest path in unweighted graphs (returns the paths with least number of nodes), finding connected components | Detecting cycles, path existence | Shortest path in weighted networks |
 
 _(1) Why does Dijkstra's take O((V + E) log V) runtime? It performs $V$ extractions of the minimum element and $E$ updates, each taking $O(logV)$ time due to the structure of the
-minHeap. In a minHeap the extraction of the minimum element terminates when one reaches the leaf level. Thus the number of levels is n for $V/2^n = 1 \iff n = log_2 V$_. 
+minHeap. In a minHeap the extraction of the minimum element terminates when one reaches the leaf level. Thus the number of levels is n for V/2^n = 1, so n = log_2 V_. 
 
 _(2) Why are we guaranteed the Dijkstra's actually terminate upon identifying the shortest distances? For example, can we potentially waste time comparing the smallest distance node to 
 all other larger distance nodes to actually conclude it is indeed the shortest path? No. Extracting from the heap automatically gives us the vertex with the smallest tentative distance. 
